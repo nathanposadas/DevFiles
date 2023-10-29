@@ -1,0 +1,150 @@
+.riot-logo{
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  border-radius: 27px;
+}
+.company{
+  display: inline-block;
+}
+.game-name{
+  display: inline-block;
+}
+.game-text{
+  text-decoration: none;
+  color: #FFAC20;
+  font-size: 15px;
+}
+.community-text{
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  font-style: arial;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  }
+  .community-text:hover{
+    color: red;
+    transition: 0.15s;
+  }
+  .forum-text{
+    color: rgb(255, 255, 255);
+    font-style: arial;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .forum-text:hover{
+    color: red;
+    transition: 0.15s;
+  }
+  .guides-text{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-style: arial;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .guides-text:hover{
+    color: red;
+    transition: 0.15s;
+  }
+  .header-community{
+    display: inline;
+    margin-right: 50px;
+  }
+.header-forum{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 50px;
+}
+.header-guides{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 50px;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+}
+
+.header-left{
+  display: flex;
+  background-color: black;
+  height: 50px;
+  width: 400PX;
+  justify-content: left;
+  align-items: center;
+}
+.header-right{
+  display: flex;
+  background-color: black;
+  height: 50px;
+  justify-content: right;
+  align-items: center;
+  flex: 1;
+  width: 200px;
+}
+.riot-games{
+  background-color: black;
+  height: 32px;
+  width: 95px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: block;
+  fill: rgb(248, 249, 249);
+  font-family: "FF Mark W05", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 32px;
+  line-height: normal;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: left;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+  width: 95px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: 0.15s;
+
+}
+.riot-games:hover{
+  color: red;
+}
+.LOL{
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom-width: 0px;
+  cursor: pointer;
+  height: 32px;
+  width: 95px;
+  box-sizing: border-box;
+  color: rgb(209, 162, 7);
+  cursor: pointer;
+  display: block;
+  fill: rgb(248, 249, 249);
+  font-family: "FF Mark W05", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 32px;
+  line-height: normal;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: left;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+  width: 95px; 
+
+}
