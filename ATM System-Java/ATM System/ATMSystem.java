@@ -39,12 +39,12 @@ public class ATMSystem {
                         while (true) {
                             
                             Random random = new Random();
-                            int accNum = random.nextInt(10000)+ 1000;
+                            int accNum = random.nextInt(200000)+ 10000;
                             int pinNum = random.nextInt(9000)+ 1000;
                             String accountOption = JOptionPane.showInputDialog(
-                                    "Your PIN is: " +pinNum + "\nYour Account Number is: "+ accNum 
-                                    + "\nSelect an account option:  "
-                                    +"\n1. Balance Inquiry\n2. Withdraw\n3. Deposit\n4. Log Out");
+                            "Your PIN is: " +pinNum + "\nYour Account Number is: "+ accNum 
+                            + "\nSelect an account option:  "
+                            +"\n1. Balance Inquiry\n2. Withdraw\n3. Deposit\n4. Fund Transfer\n5. Change Pin\n6. Log Out");
                             
                             int accountChoice = Integer.parseInt(accountOption);
                             
@@ -70,16 +70,52 @@ public class ATMSystem {
                                     JOptionPane.showMessageDialog(null, "Deposited: $" + depositAmount);
                                     break;
                                 case 4:
-                                    JOptionPane.showMessageDialog(null, "Logged out.");
-                                    break;
-                                default:
-                                    JOptionPane.showMessageDialog(null, "Invalid account option.");
+                                // Fund Transfer
+                                String receiverUsername = JOptionPane.showInputDialog("Enter receiver's username:");
+                                int receiverIndex = -1;
+
+                                for (int i = 0; i < userCount; i++) {
+                                    if (usernames[i].equals(receiverUsername)) {
+                                        receiverIndex = i;
+                                        break;
+                                    }
+                                }
+
+                            if (receiverIndex != -1) {
+                                double transferAmount = Double.parseDouble(JOptionPane.showInputDialog("Enter transfer amount:"));
+                                if (transferAmount <= balances[userIndex]) {
+                                    balances[userIndex] -= transferAmount;
+                                    balances[receiverIndex] += transferAmount;
+                                    JOptionPane.showMessageDialog(null, "Transferred $" + transferAmount + " to " + receiverUsername);
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Insufficient funds");
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Receiver username not found.");
                             }
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Invalid username or password.");
-                    }
-                    break;
+                            break;
+        
+                        case 5:
+                            // Change PIN
+                            String newPassword = JOptionPane.showInputDialog("Enter new password:");
+                            passwords[userIndex] = newPassword;
+                            JOptionPane.showMessageDialog(null, "Password changed successfully.");
+                            break;
+                        case 6:
+                        JOptionPane.showMessageDialog(null, "Logged out.");
+                        userIndex = -1;
+                        // Reset the user index to indicate the user is logged out.
+                        break;
+                        default:
+                        JOptionPane.showMessageDialog(null, "Invalid account option.");
+                                    }
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Invalid username or password.");
+                            }
+                            break;
+                        
+                    
                 case 2:
                     // Enroll
                     if (userCount < usernames.length) {
